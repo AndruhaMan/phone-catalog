@@ -1,11 +1,13 @@
-import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.scss';
-import { App } from './App';
+import { Root } from './Root';
+import { CartProvider } from './contexts/CartContext';
+import { FavsProvider } from './contexts/FavsContext';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <CartProvider>
+    <FavsProvider>
+      <Root />
+    </FavsProvider>
+  </CartProvider>,
   document.getElementById('root'),
 );
